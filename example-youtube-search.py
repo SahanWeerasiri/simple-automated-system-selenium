@@ -19,7 +19,7 @@ driver.get("https://www.youtube.com")
 
 # Find the search input box by its class name and enter search term
 input_box = driver.find_element(By.CLASS_NAME, "ytSearchboxComponentInput")
-input_box.send_keys("Ben 10", Keys.ENTER)
+input_box.send_keys("Bat man", Keys.ENTER)
 
 # Wait for search results to load
 time.sleep(2)
@@ -51,6 +51,8 @@ with open(download_dir+"/video.mp4", "wb") as file:
     for chunk in response.iter_content(chunk_size=1024):
         if chunk:
             file.write(chunk)
-print("Downloaded")
+print("Downloading...")
+time.sleep(5)
+print("Terminate Downloading process manually - This is a demo")
 
 driver.quit()
